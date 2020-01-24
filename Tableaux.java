@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * @author France Beaudoin
  */
@@ -14,7 +16,7 @@ public class Tableaux {
         tab[i2] = transit;
     }
 
-    public static void trierCroissantSSS(int[] tab){
+    public static int[] trierCroissantSSS(int[] tab){
         int imin;
         for (int i=0; i<tab.length-1; i++){
             imin = i;
@@ -25,6 +27,7 @@ public class Tableaux {
             if (imin != i)
                 permute(tab, i, imin);
         }
+        return tab;
     }
 
     public static void trierCroissantSSS(String[] tab){
@@ -38,5 +41,9 @@ public class Tableaux {
             if (imin != i)
                 permute(tab, i, imin);
         }
+    }
+
+    public static void print(int[] tab){
+        System.out.print(Arrays.toString(tab));
     }
 }
