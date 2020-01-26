@@ -62,33 +62,21 @@ public class Tableaux {
     }
 
     public static int maximum(int[] tab) {
-        int imin;
-        for (int i = 0; i < tab.length - 1; i++) {
-            imin = i;
-            for (int j = i + 1; j < tab.length; j++) {
-                if (tab[j] < tab[imin])
-                    imin = j;
-            }
-            if (imin != i)
-                permute(tab, i, imin);
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < tab.length; i++) {
+            if (max<tab[i])
+                max = tab[i];
         }
-        return tab[tab.length - 1];
-
+        return max;
     }
 
     public static int minimum(int[] tab) {
-        int imin;
-        for (int i = 0; i < tab.length - 1; i++) {
-            imin = i;
-            for (int j = i + 1; j < tab.length; j++) {
-                if (tab[j] < tab[imin])
-                    imin = j;
-            }
-            if (imin != i)
-                permute(tab, i, imin);
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < tab.length; i++) {
+            if (min>tab[i])
+                min = tab[i];
         }
-        return tab[0];
-
+        return min;
     }
 
     public static double moyenne(int[] tab){
@@ -96,7 +84,9 @@ public class Tableaux {
         for (int i=0;i<tab.length-1;i++ ){
             moyenne += tab[i];
         }
-        return moyenne/tab.length;
+        if (tab.length == 0)
+            return moyenne;
+        else return moyenne/tab.length;
     }
 
     public static int fouilleSeq(int[] tab, int nombre){
