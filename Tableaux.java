@@ -62,13 +62,13 @@ public class Tableaux {
         return max;
     }
 
-    public static String maximum(String[] tab) {
+    public static int maximum(String[] tab) {
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < tab.length; i++) {
             if (max<Integer.parseInt(tab[i]))
                 max = Integer.parseInt(tab[i]);
         }
-        return String.valueOf(max);
+        return max;
     }
 
     public static int minimum(int[] tab) {
@@ -80,18 +80,18 @@ public class Tableaux {
         return min;
     }
 
-    public static String minimum(String[] tab) {
+    public static int minimum(String[] tab) {
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < tab.length; i++) {
             if (min>Integer.parseInt(tab[i]))
                 min = Integer.parseInt(tab[i]);
         }
-        return String.valueOf(min);
+        return min;
     }
 
     public static double moyenne(int[] tab){
         int moyenne = 0;
-        for (int i=0;i<tab.length-1;i++ ){
+        for (int i=0;i<tab.length;i++ ){
             moyenne += tab[i];
         }
         if (tab.length == 0)
@@ -101,7 +101,7 @@ public class Tableaux {
 
     public static double moyenne(String[] tab){
         int moyenne = 0;
-        for (int i=0;i<tab.length-1;i++ ){
+        for (int i=0;i<tab.length;i++ ){
             moyenne += Integer.parseInt(tab[i]);
         }
         if (tab.length == 0)
@@ -123,7 +123,7 @@ public class Tableaux {
         else return -1;
     }
 
-    public static String fouilleSeq(String[] tab, int nombre){
+    public static int fouilleSeq(String[] tab, int nombre){
         int i = 0;
         boolean trouve = false;
         while (i<tab.length && !trouve){
@@ -133,7 +133,7 @@ public class Tableaux {
 
         }
         if (trouve)
-            return String.valueOf(tab[i]);
-        else return String.valueOf(-1);
+            return Integer.parseInt(tab[i]);
+        else return (-1);
     }
 }
